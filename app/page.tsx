@@ -89,6 +89,11 @@ export default function Home() {
 
         {weatherData && <WeatherDashboard weatherData={weatherData} />}
       </div>
+      <div className="fixed bottom-4 right-4 text-white/80 text-sm flex items-center gap-2">
+        <span>© {new Date().getFullYear()}</span>
+        <span>•</span>
+        <span>Made with ❤️ by Abhishek</span>
+      </div>
     </main>
   );
 }
