@@ -5,10 +5,11 @@ import WeatherDashboard from "@/components/WeatherDashboard";
 import SearchBar from "@/components/SearchBar";
 import WeatherEffects from "@/components/WeatherEffects";
 import { CloudSun } from "lucide-react";
+import { WeatherData } from "@/types/weather";
 
 export default function Home() {
   const [city, setCity] = useState("");
-  const [weatherData, setWeatherData] = useState(null);
+  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -35,7 +36,7 @@ export default function Home() {
         throw new Error("City not found");
       }
       
-      const data = await response.json();
+      const data: WeatherData = await response.json();
       setWeatherData(data);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to fetch weather data");

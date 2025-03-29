@@ -12,9 +12,10 @@ import {
   ThermometerSnowflake,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { WeatherData } from "@/types/weather";
 
 interface WeatherDashboardProps {
-  weatherData: any;
+  weatherData: WeatherData;
 }
 
 const containerVariants = {
