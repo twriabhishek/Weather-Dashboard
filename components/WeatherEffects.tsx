@@ -67,7 +67,7 @@ export default function WeatherEffects({ weatherCode, isDay }: WeatherEffectsPro
               animate={{ y: "100vh" }}
               transition={{
                 duration: weatherCode.startsWith("6") ? 3 : 1,
-                delay: animationDelay,
+                delay: parseFloat(animationDelay),
                 repeat: Infinity,
                 ease: "linear",
               }}
