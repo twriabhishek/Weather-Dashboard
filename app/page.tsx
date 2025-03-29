@@ -45,10 +45,15 @@ export default function Home() {
     }
   };
 
-  const isDay = weatherData ? 
-    new Date().getTime() / 1000 > weatherData.sys.sunrise && 
-    new Date().getTime() / 1000 < weatherData.sys.sunset : 
-    true;
+  // const isDay = weatherData ? 
+  //   new Date().getTime() / 1000 > weatherData.sys.sunrise && 
+  //   new Date().getTime() / 1000 < weatherData.sys.sunset : 
+  //   true;
+
+  const isDay = weatherData?.sys
+  ? new Date().getTime() / 1000 > weatherData.sys.sunrise &&
+    new Date().getTime() / 1000 < weatherData.sys.sunset
+  : true;
 
   return (
     <main className={`min-h-screen transition-all duration-1000 ${
